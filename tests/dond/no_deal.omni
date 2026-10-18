@@ -1,0 +1,30 @@
+# Open first round, refuse banker, continue
+tap PLAY
+wait 40
+expect phase 1
+tapkey 10
+wait 40
+expect yours 10
+tapkey 0
+wait 2500
+tapkey 1
+wait 2500
+tapkey 2
+wait 2500
+tapkey 3
+wait 2500
+tapkey 4
+wait 2500
+tapkey 5
+wait 2500
+expect phase 4
+tap SEL
+wait 40
+expect phase 2
+expect need_open 5
+expect board_left 19
+tap HOME
+wait 40
+shot dond_board.png
+tap HOME
+wait 40

@@ -1,0 +1,40 @@
+# Deal or No Deal Phase 1: pick case, open six, banker deal path
+echo start
+expect phase 0
+# Any key on the title only starts the game: it must not choose a case
+tapkey 4
+wait 50
+expect phase 1
+tapkey 4
+wait 50
+expect yours 4
+expect phase 2
+expect need_open 6
+# Open six other cases (skip 4)
+tapkey 0
+wait 200
+tapkey 1
+wait 2500
+expect need_open 4
+tapkey 2
+wait 2500
+tapkey 3
+wait 2500
+tapkey 5
+wait 2500
+tapkey 6
+wait 2500
+expect phase 4
+expect offers 1
+expect offer >0
+tap PLAY
+wait 50
+expect took_deal 1
+expect phase 5
+leds
+shot dond_deal.png
+# Open your case after the deal: the reveal shows what it held
+tap PLAY
+wait 50
+expect phase 7
+shot dond_reveal.png
